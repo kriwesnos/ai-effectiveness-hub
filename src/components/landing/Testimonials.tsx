@@ -51,6 +51,16 @@ const testimonials = [
     time: "18:55",
     reactions: ["✨", "❤️"],
   },
+  {
+    id: 6,
+    user: "Марина К.",
+    initials: "МК",
+    color: "text-cyan-500",
+    bgColor: "bg-cyan-500",
+    text: "Наконец-то нашла то, что искала! 🎯 За 2 недели автоматизировала весь свой интернет-магазин. Бот сам отвечает клиентам, принимает заказы и даже напоминает о брошенных корзинах. Экономия времени — колоссальная!",
+    time: "20:10",
+    reactions: ["🎯", "👏"],
+  },
 ];
 
 const TelegramMessage = ({ testimonial }: { testimonial: typeof testimonials[0] }) => {
@@ -134,12 +144,12 @@ const Testimonials = () => {
           </p>
         </div>
 
-        {/* Masonry Grid of Messages */}
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+        {/* Grid of Messages */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <div 
               key={testimonial.id} 
-              className="break-inside-avoid pb-6"
+              className="flex justify-center"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <TelegramMessage testimonial={testimonial} />
