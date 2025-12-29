@@ -1,4 +1,5 @@
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import telegramBg from "@/assets/telegram-bg.png";
 
 const testimonials = [
   {
@@ -122,12 +123,11 @@ const TelegramMessage = ({ testimonial }: { testimonial: typeof testimonials[0] 
 const Testimonials = () => {
   return (
     <section className="relative py-24 overflow-hidden">
-      {/* Telegram-style doodle wallpaper background */}
+      {/* Telegram-style wallpaper background */}
       <div 
-        className="absolute inset-0"
+        className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundColor: "#d1e3d3",
-          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill:%23b8d4bb;%7D%3C/style%3E%3C/defs%3E%3C!-- Stars --%3E%3Cpath class='a' d='M20,15 l2,5 5,0 -4,3 2,5 -5,-3 -5,3 2,-5 -4,-3 5,0z'/%3E%3Cpath class='a' d='M160,45 l1.5,4 4,0 -3,2.5 1.5,4 -4,-2.5 -4,2.5 1.5,-4 -3,-2.5 4,0z'/%3E%3Cpath class='a' d='M85,170 l2,5 5,0 -4,3 2,5 -5,-3 -5,3 2,-5 -4,-3 5,0z'/%3E%3C!-- Hearts --%3E%3Cpath class='a' d='M50,60 c-3,-3 -8,-3 -8,2 0,4 8,8 8,8 s8,-4 8,-8 c0,-5 -5,-5 -8,-2z'/%3E%3Cpath class='a' d='M170,130 c-2,-2 -6,-2 -6,1.5 0,3 6,6 6,6 s6,-3 6,-6 c0,-3.5 -4,-3.5 -6,-1.5z'/%3E%3C!-- Paper planes --%3E%3Cpath class='a' d='M120,20 l15,8 -5,2 -3,6 -2,-5 -8,-3z'/%3E%3Cpath class='a' d='M30,140 l12,6 -4,1.5 -2.5,5 -1.5,-4 -6,-2.5z'/%3E%3C!-- Circles/dots --%3E%3Ccircle class='a' cx='100' cy='100' r='4'/%3E%3Ccircle class='a' cx='180' cy='85' r='3'/%3E%3Ccircle class='a' cx='25' cy='95' r='2.5'/%3E%3Ccircle class='a' cx='145' cy='175' r='3'/%3E%3Ccircle class='a' cx='65' cy='25' r='2'/%3E%3C!-- Smiles --%3E%3Ccircle class='a' cx='140' cy='90' r='6'/%3E%3Cpath class='a' d='M137,91 q3,3 6,0' fill='none' stroke='%23d1e3d3' stroke-width='1.5'/%3E%3C!-- Swirls --%3E%3Cpath class='a' d='M75,120 q10,-5 5,5 t10,5' fill='none' stroke='%23b8d4bb' stroke-width='2'/%3E%3Cpath class='a' d='M175,25 q8,-4 4,4 t8,4' fill='none' stroke='%23b8d4bb' stroke-width='1.5'/%3E%3C!-- Small diamonds --%3E%3Cpath class='a' d='M45,175 l3,-5 3,5 -3,5z'/%3E%3Cpath class='a' d='M110,55 l2,-4 2,4 -2,4z'/%3E%3C/svg%3E")`,
+          backgroundImage: `url(${telegramBg})`,
         }}
       />
       
