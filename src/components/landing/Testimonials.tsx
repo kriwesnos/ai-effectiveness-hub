@@ -5,9 +5,9 @@ const testimonials = [
     id: 1,
     user: "Кирилл М.",
     initials: "КМ",
-    color: "text-blue-500",
+    color: "text-blue-600",
     bgColor: "bg-blue-500",
-    text: "Ни капли не жалею, что пошел на курс. Уже на третьем модуле окупил обучение, взяв заказ на разработку бота для кофейни ☕️. Материал структурирован идеально, даже для новичков. Спасибо за новую профессию! 🤝",
+    text: "Заказал AI-ассистента для обработки заявок в нашей кофейне ☕️. Теперь бот сам принимает заказы, отвечает на вопросы и напоминает клиентам о готовности. Экономим 4 часа в день! Ребята сделали всё за неделю, очень доволен результатом 🤝",
     time: "10:15",
     reactions: ["🔥", "👍"],
   },
@@ -15,9 +15,9 @@ const testimonials = [
     id: 2,
     user: "Анна С.",
     initials: "АС",
-    color: "text-orange-500",
+    color: "text-orange-600",
     bgColor: "bg-orange-500",
-    text: "Ребята, вы лучшие! ❤️ Столько поддержки я еще нигде не видела. Кураторы отвечают почти мгновенно. Самое ценное — это комьюнити, где мы делимся заказами и фишками. Мой доход вырос в 2 раза за месяц!",
+    text: "Обратилась с задачей автоматизировать запись клиентов в салон красоты. Сделали бота, который сам ведёт расписание, напоминает о визитах и даже собирает отзывы ❤️ Клиенты в восторге, а я наконец-то не трачу вечера на переписки. Доход вырос в 2 раза за месяц!",
     time: "11:42",
     reactions: ["❤️"],
   },
@@ -25,9 +25,9 @@ const testimonials = [
     id: 3,
     user: "Дмитрий",
     initials: "Д",
-    color: "text-green-500",
+    color: "text-green-600",
     bgColor: "bg-green-500",
-    text: "Вчера сдал проект заказчику и получил 40к! 💸 А ведь еще месяц назад я даже не знал, что такое Make. Всё очень доступно, без лишней воды. Практика с первого дня — это то, что нужно.",
+    text: "Внедрили ассистента для моего интернет-магазина — теперь он обрабатывает 80% обращений без участия менеджеров 💸 Заказы, статусы доставки, возвраты — всё на автомате. Окупилось за первый же месяц. Рекомендую всем, кто устал от рутины!",
     time: "14:05",
     reactions: ["🔥", "💸"],
   },
@@ -35,9 +35,9 @@ const testimonials = [
     id: 4,
     user: "Елена В.",
     initials: "ЕВ",
-    color: "text-purple-500",
+    color: "text-purple-600",
     bgColor: "bg-purple-500",
-    text: "Проходила много обучений, но это — топ-1 🔥. Всё четко, по делу. Особенно зашли уроки по продажам своих услуг — страх называть цену ушел полностью. Теперь уверенно беру заказы от 500$.",
+    text: "Долго искала, кто сделает нормальную автоматизацию для риелторского агентства. AI Effectiveness — топ-1 🔥 Бот квалифицирует лиды, назначает показы и ведёт базу клиентов. Конверсия выросла на 40%, а я освободила время для сделок!",
     time: "16:30",
     reactions: ["👍", "🔥"],
   },
@@ -45,9 +45,9 @@ const testimonials = [
     id: 5,
     user: "Алексей",
     initials: "А",
-    color: "text-red-500",
+    color: "text-red-600",
     bgColor: "bg-red-500",
-    text: "Курс превзошел ожидания. Думал, будет сложно технически, но объясняют буквально \"на пальцах\". Собрал своего первого ИИ-ассистента для своего же бизнеса — он уже обрабатывает заявки 24/7. Это магия! ✨",
+    text: "Заказал бота для своей стоматологии — он теперь записывает пациентов, напоминает о визитах и даже отвечает на типовые вопросы о ценах и услугах 24/7. Администратор разгружена, пациенты довольны. Это реально магия! ✨",
     time: "18:55",
     reactions: ["✨", "❤️"],
   },
@@ -55,9 +55,9 @@ const testimonials = [
     id: 6,
     user: "Марина К.",
     initials: "МК",
-    color: "text-cyan-500",
+    color: "text-cyan-600",
     bgColor: "bg-cyan-500",
-    text: "Наконец-то нашла то, что искала! 🎯 За 2 недели автоматизировала весь свой интернет-магазин. Бот сам отвечает клиентам, принимает заказы и даже напоминает о брошенных корзинах. Экономия времени — колоссальная!",
+    text: "За 2 недели мне автоматизировали весь процесс работы с клиентами в фитнес-студии 🎯 Бот записывает на тренировки, продлевает абонементы, собирает обратную связь. Раньше на это уходило 5 часов в день — теперь ноль. Очень благодарна команде!",
     time: "20:10",
     reactions: ["🎯", "👏"],
   },
@@ -65,45 +65,49 @@ const testimonials = [
 
 const TelegramMessage = ({ testimonial }: { testimonial: typeof testimonials[0] }) => {
   return (
-    <div className="flex gap-3 items-start animate-fade-up">
+    <div className="flex gap-2.5 items-start animate-fade-up">
       {/* Avatar */}
-      <Avatar className="h-10 w-10 shrink-0 ring-2 ring-background shadow-lg">
-        <AvatarFallback className={`${testimonial.bgColor} text-white font-semibold text-sm`}>
+      <Avatar className="h-9 w-9 shrink-0 shadow-md">
+        <AvatarFallback className={`${testimonial.bgColor} text-white font-semibold text-xs`}>
           {testimonial.initials}
         </AvatarFallback>
       </Avatar>
 
       {/* Message Bubble */}
-      <div className="relative max-w-[320px] md:max-w-[380px]">
+      <div className="relative max-w-[300px] md:max-w-[340px]">
         {/* Bubble tail */}
-        <div className="absolute -left-2 top-0 w-4 h-4 bg-white dark:bg-slate-100 rounded-bl-full" 
-             style={{ clipPath: "polygon(100% 0, 0 0, 100% 100%)" }} />
+        <div 
+          className="absolute -left-1.5 top-0 w-3 h-3"
+          style={{
+            background: "linear-gradient(135deg, #ffffff 50%, transparent 50%)",
+          }}
+        />
         
         {/* Bubble content */}
-        <div className="relative bg-white dark:bg-slate-100 rounded-2xl rounded-tl-sm p-4 shadow-lg">
+        <div className="relative bg-white rounded-xl rounded-tl-sm p-3 shadow-sm">
           {/* User name */}
-          <p className={`font-bold text-sm mb-1 ${testimonial.color}`}>
+          <p className={`font-semibold text-sm mb-1 ${testimonial.color}`}>
             {testimonial.user}
           </p>
           
           {/* Message text */}
-          <p className="text-slate-800 dark:text-slate-900 text-sm leading-relaxed">
+          <p className="text-slate-700 text-[13px] leading-relaxed">
             {testimonial.text}
           </p>
           
           {/* Timestamp */}
-          <div className="flex justify-end mt-2">
-            <span className="text-xs text-slate-400">{testimonial.time}</span>
+          <div className="flex justify-end mt-1.5">
+            <span className="text-[11px] text-slate-400">{testimonial.time}</span>
           </div>
         </div>
 
         {/* Reactions */}
         {testimonial.reactions.length > 0 && (
-          <div className="absolute -bottom-3 right-4 flex gap-1">
+          <div className="absolute -bottom-2.5 right-3 flex gap-0.5">
             {testimonial.reactions.map((reaction, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-slate-200 rounded-full px-2 py-0.5 shadow-md border border-slate-200 text-sm"
+                className="bg-white rounded-full px-1.5 py-0.5 shadow-sm border border-slate-100 text-xs"
               >
                 {reaction}
               </div>
@@ -118,34 +122,32 @@ const TelegramMessage = ({ testimonial }: { testimonial: typeof testimonials[0] 
 const Testimonials = () => {
   return (
     <section className="relative py-24 overflow-hidden">
-      {/* Telegram-style background pattern */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0e1621] to-[#17212b]">
-        {/* Doodle pattern overlay */}
-        <div 
-          className="absolute inset-0 opacity-5"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}
-        />
-        {/* Gradient overlays */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
-      </div>
+      {/* Telegram-style doodle wallpaper background */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          backgroundColor: "#d1e3d3",
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill:%23b8d4bb;%7D%3C/style%3E%3C/defs%3E%3C!-- Stars --%3E%3Cpath class='a' d='M20,15 l2,5 5,0 -4,3 2,5 -5,-3 -5,3 2,-5 -4,-3 5,0z'/%3E%3Cpath class='a' d='M160,45 l1.5,4 4,0 -3,2.5 1.5,4 -4,-2.5 -4,2.5 1.5,-4 -3,-2.5 4,0z'/%3E%3Cpath class='a' d='M85,170 l2,5 5,0 -4,3 2,5 -5,-3 -5,3 2,-5 -4,-3 5,0z'/%3E%3C!-- Hearts --%3E%3Cpath class='a' d='M50,60 c-3,-3 -8,-3 -8,2 0,4 8,8 8,8 s8,-4 8,-8 c0,-5 -5,-5 -8,-2z'/%3E%3Cpath class='a' d='M170,130 c-2,-2 -6,-2 -6,1.5 0,3 6,6 6,6 s6,-3 6,-6 c0,-3.5 -4,-3.5 -6,-1.5z'/%3E%3C!-- Paper planes --%3E%3Cpath class='a' d='M120,20 l15,8 -5,2 -3,6 -2,-5 -8,-3z'/%3E%3Cpath class='a' d='M30,140 l12,6 -4,1.5 -2.5,5 -1.5,-4 -6,-2.5z'/%3E%3C!-- Circles/dots --%3E%3Ccircle class='a' cx='100' cy='100' r='4'/%3E%3Ccircle class='a' cx='180' cy='85' r='3'/%3E%3Ccircle class='a' cx='25' cy='95' r='2.5'/%3E%3Ccircle class='a' cx='145' cy='175' r='3'/%3E%3Ccircle class='a' cx='65' cy='25' r='2'/%3E%3C!-- Smiles --%3E%3Ccircle class='a' cx='140' cy='90' r='6'/%3E%3Cpath class='a' d='M137,91 q3,3 6,0' fill='none' stroke='%23d1e3d3' stroke-width='1.5'/%3E%3C!-- Swirls --%3E%3Cpath class='a' d='M75,120 q10,-5 5,5 t10,5' fill='none' stroke='%23b8d4bb' stroke-width='2'/%3E%3Cpath class='a' d='M175,25 q8,-4 4,4 t8,4' fill='none' stroke='%23b8d4bb' stroke-width='1.5'/%3E%3C!-- Small diamonds --%3E%3Cpath class='a' d='M45,175 l3,-5 3,5 -3,5z'/%3E%3Cpath class='a' d='M110,55 l2,-4 2,4 -2,4z'/%3E%3C/svg%3E")`,
+        }}
+      />
+      
+      {/* Subtle gradient overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/20" />
 
       <div className="container relative z-10 mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-4">
             Что о нас говорят{" "}
-            <span className="bg-gradient-primary bg-clip-text text-transparent">клиенты</span>
+            <span className="text-primary">клиенты</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Реальные отзывы от тех, кто уже использует наших AI-ассистентов
+          <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+            Реальные отзывы от тех, кто уже автоматизировал бизнес с нами
           </p>
         </div>
 
         {/* Grid of Messages */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
           {testimonials.map((testimonial, index) => (
             <div 
               key={testimonial.id} 
